@@ -1,0 +1,107 @@
+
+<div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+    <div >
+        <div class="card-header p-4">
+            <a class="pt-2 d-inline-block" href="index.html" data-abc="true"><img style="width: 130px;" src="assets/images/image005.jpg" alt=""></a>
+            <div class="float-right">
+                <h5 style="text-align: center; font-size: 15px;font-weight: bold; color: black;" class="mb-0">La Réalisation pour l'investissement Touristique <br>MF : 1363969A/A/M/000 <br>Immeuble Omrane rue Lac Leman, Tunis 1053 Les Berges Du Lac <br>Tél : +216 71 960 714 - +216 71 860 393</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row mb-2">
+                <div class="col-6">
+                    <table  class="table table-bordered" style="border-width: 2px;border-color: black; font-size: small;">
+                        <tbody >
+                          <tr>
+                            <td style="font-weight: bold;">Client : {{res.client}} <br>
+                            M.F : {{res.MF}}  <br>
+                        Phone : {{res.phone}} <br>
+                    Adress : {{res.adress}} <br>
+                Commercial : {{user.firstName}} {{res.lastName}} <br>
+            Date Du : {{ date | date:'medium' }} </td>
+                          </tr>
+                        </tbody>
+                        </table>
+                </div>
+
+            </div>
+
+            <h2 style="text-align: center;font-weight: bold;">Facture {{facture}}  /2021</h2>
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border-width: 2px;border-color: black; font-size: small;">
+                    <thead >
+                        <tr>
+                            <th  style="border-width: 2px;border-color: black;text-align: center;">Libelle</th>
+                            <th  style="border-width: 2px;border-color: black;text-align: center;" class="right">Qte</th>
+                            <th  style="border-width: 2px;border-color: black;text-align: center;" class="center">P.U.H.T</th>
+                            <th  style="border-width: 2px;border-color: black;text-align: center;" class="right">Rem</th>
+                            <th  style="border-width: 2px;border-color: black;text-align: center;" class="right">TVA</th>
+                            <th  style="border-width: 2px;border-color: black;text-align: center;" class="right">T.T.C</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+
+                            <td  style="border-width: 2px;border-color: black;text-align: center;" class="left">Transfert {{res.depart}} - {{res.arrive}}</td>
+                            <td  style="border-width: 2px;border-color: black;text-align: center;" class="right">{{res.nbreDeCar}}</td>
+                            <td  style="border-width: 2px;border-color: black;text-align: center;" class="center">{{x}}</td>
+                            <td  style="border-width: 2px;border-color: black;text-align: center;" class="right">0.000</td>
+                            <td  style="border-width: 2px;border-color: black;text-align: center;" class="right">7</td>
+                            <td  style="border-width: 2px;border-color: black;text-align: center;" class="right">{{TTC}}</td>
+
+                    </tbody>
+                    <tbody *ngFor="let plus of plus">
+                        
+
+                        <td  style="border-width: 2px;border-color: black;text-align: center;" class="left">Transfert {{plus.depart}} - {{plus.arrive}}</td>
+                        <td  style="border-width: 2px;border-color: black;text-align: center;" class="right">{{plus.nbreDeCar}}</td>
+                        <td  style="border-width: 2px;border-color: black;text-align: center;" class="center">{{plus.somme.toLocaleString()}}</td>
+                        <td  style="border-width: 2px;border-color: black;text-align: center;" class="right">0.000</td>
+                        <td  style="border-width: 2px;border-color: black;text-align: center;" class="right">7</td>
+                        <td  style="border-width: 2px;border-color: black;text-align: center;" class="right" id="somme">{{(((plus.somme*7)/100)+plus.somme).toLocaleString()}}</td>
+
+                </tbody>
+                </table>
+            </div>
+        
+    <table  class="table table-bordered" style="border-width: 2px;border-color: black;width: 4%;font-size: small;">
+        <tbody>
+            <tr style="font-weight: bold;"> <td>
+                TOTAL HT : {{HT.toLocaleString()}} <br>
+                REMISE : 0.000 <br>
+                TOTAL NET HT : {{HT.toLocaleString()}}
+            </td>
+            <td >
+                TOTAL TVA : {{(som + s).toLocaleString()}}  <br>
+                TIBRE : 600<br>
+                TOTAL TTC : {{timbre.toLocaleString()}}                
+            </td>
+            </tr>
+   
+        </tbody>
+        <p style="color: black;font-weight: bold;margin-left: 3%;">
+            Arrété le(a) présent(e) à la somme de :
+        </p>
+        <div style="color: black;font-weight: bold;margin-left: 5%;margin-top: -2%;">{{num}}</div>
+        </table>
+
+</div>
+</div>
+         </div>
+
+
+ 
+ <!-- <h1><b>{{numberInWords}}</b></h1>
+ -->
+
+ <!-- <body>
+ 
+ <div align="center">
+     <form name="test">
+         <input type="text" name="inum" value="" size="18">
+         <input type="button" value="To Words" onclick="test.rnum.value = toWords(test.inum.value);">
+         <textarea name="rnum" cols="40" rows="5"></textarea>
+     </form>
+ </div>
+ </body> -->

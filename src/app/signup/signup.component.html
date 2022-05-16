@@ -1,0 +1,50 @@
+<app-nav></app-nav>
+<body class="img js-fullheight" style="background-image: url(assets/images/bus_2.png); font-size: 150%;">
+ 
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+	
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center" style="color: aliceblue;">Sign Up</h3>
+		      	<form action="#" class="signin-form" [formGroup]="signupForm">
+		      		<div class="form-group">
+		      			<input type="text" class="form-control" formControlName="firstName" required="required" placeholder="First Name" >
+		      		</div>
+					  <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched)">
+						<div *ngIf="signupForm.controls['firstName'].errors?.['required']" style="color: red; font-size: 15px;" > First Name it is required</div>
+					  </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" formControlName="lastName" required="required" placeholder="Last Name" >
+                    </div>
+					<div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)">
+						<div *ngIf="signupForm.controls['lastName'].errors?.['required']" style="color: red; font-size: 15px;"  >Last Name is required</div>
+					</div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="email" required="required" placeholder="Email" >
+                    </div>
+					<div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+						<div *ngIf="signupForm.controls['email'].errors?.['required']" style="color: red; font-size: 15px;"  >Email is required</div>
+						<div *ngIf="signupForm.controls['email'].errors?.['email']" style="color: red; font-size: 15px;"  >Email not correct</div>
+					</div>
+	            <div class="form-group">
+	              <input id="password-field" type="password" class="form-control" formControlName="password" required="required" placeholder="Password" >
+	         
+	            </div>
+				<div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+					<div *ngIf="signupForm.controls['password'].errors?.['required']" style="color: red; font-size: 15px;"  >password is required</div>
+					<div *ngIf="signupForm.controls['password'].errors?.['minlength']" style="color: red; font-size: 15px;"  >password minimum 6 charactere</div>
+				</div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3" (click)="signup(signupForm.value)">Sign Up</button>
+	            </div>
+	          </form>
+	          <a href="/signin"><p class="w-100 text-center" style="color: aliceblue;">&mdash; Sign In &mdash;</p></a>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>

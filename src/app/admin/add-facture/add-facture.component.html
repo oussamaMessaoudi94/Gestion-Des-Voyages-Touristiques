@@ -1,0 +1,114 @@
+
+
+<app-nav-admin></app-nav-admin>
+<body>
+  
+
+
+    <div class="image" style="background-image: url('assets/images/bus_2.png'); font-size: 5%;  "  >
+    <div class="mahi_holder" style="padding-top: 8%;" [formGroup]="requestForm">
+        <h2><i>transfert request</i></h2><br>
+       
+            
+         
+            
+            <div class="col-3">
+              <h5 style="color:blue; font-weight: bold;  ;">Client</h5>
+                <input class="effect-1" type="text"  formControlName="client" required="required" placeholder="Client">
+                  <span class="focus-border"></span>
+              </div>
+            <div class="col-3">
+              <h5 style="color:blue; font-weight: bold;  ;">Adress</h5>
+                <input class="effect-2" type="text"  formControlName="adress" required="required" placeholder="Adress">
+                  <span class="focus-border"></span>
+              </div>
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Phone</h5>
+                <input class="effect-3" type="tel"  formControlName="phone" required="required" placeholder="Phone">
+                  <span class="focus-border"></span>
+              </div>  
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">MF</h5>
+                <input class="effect-3" type="text"  formControlName="MF" required="required" placeholder="MF">
+                  <span class="focus-border"></span>
+              </div>  
+ 
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Charge Fix</h5>
+                <input class="effect-3" type="number"  formControlName="chargeFix" required="required" placeholder="Charge fix">
+                  <span class="focus-border"></span>
+              </div>  
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Marge</h5>
+                <input class="effect-3" type="number"  formControlName="marge" required="required" placeholder="Marge">
+                  <span class="focus-border"></span>
+              </div>  
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Carburant/L</h5>
+                <input class="effect-3" type="number"  formControlName="carburant" required="required" placeholder="Carburant/L">
+                  <span class="focus-border"></span>
+              </div>  
+              <div class="col-3"  >
+                <h5 style="color:blue; font-weight: bold;  ;">Date Depart</h5>
+                <input class="effect-3" type="date"  formControlName="depart" required="required" placeholder="Date départ">
+                  <span class="focus-border"></span>
+              </div>  
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Date d'arrivé</h5>
+                <input class="effect-3" type="date"  formControlName="arrive" required="required" placeholder="Date d'arrivé">
+                  <span class="focus-border"></span>
+              </div>  
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Nbre des jours</h5>
+                <input class="effect-3" type="number"  formControlName="nbreDeJour" required="required" placeholder="Nbre des jours">
+                  <span class="focus-border"></span>
+              </div>
+ 
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Nbre des cars</h5>
+                <input class="effect-3" type="number"  formControlName="nbreDeCar" required="required" placeholder="Nbre des cars">
+                  <span class="focus-border"></span>
+              </div>
+              <div class="col-3">
+                <h5 style="color:blue; font-weight: bold;  ;">Destination</h5>
+                <select id="destination" class="effect-3"  formControlName="destination" required="required" placeholder="Destination"> 
+                  <option selected value="1">Select a destination</option>
+                  <option  value="40">Tunis - hammamet</option>
+                  <option value="80">Ariana - bizerte</option>
+                </select>
+              </div> 
+
+              <div  style="margin-left: 40%;">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <filter id="gooey">
+                            <!-- in="sourceGraphic" -->
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+                            <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+                        </filter>
+                    </defs>
+                </svg>
+            
+                <button id="gooey-button" (click)="request(requestForm.value)">
+                    Valider
+                    <span class="bubbles">
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                    </span>
+                </button>
+              </div>
+
+          </div> 
+        </div>
+ 
+</body>
+

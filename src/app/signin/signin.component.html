@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<body class="img js-fullheight" style="background-image: url(assets/images/bus_2.png); font-size: 200%;">
+ 
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+	
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center" style="color: aliceblue;">Have an account?</h3>
+		      	<form action="#" class="signin-form" (ngSubmit)="signin()">
+		      		<div class="form-group" >
+		      			<input type="text" class="form-control" [(ngModel)]='user.email' [ngModelOptions]="{standalone: true}" placeholder="Email" required>
+		      		</div>
+	            <div class="form-group">
+	              <input id="password-field" type="password" class="form-control" [(ngModel)]='user.password' [ngModelOptions]="{standalone: true}" placeholder="Password" required>
+	         
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+	            </div>
+	          </form>
+	          <a href="/signup"><p class="w-100 text-center" style="color: aliceblue;">&mdash; Or Sign Up &mdash;</p></a>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
